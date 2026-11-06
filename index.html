@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive electronic drum kit built by Stephen Oyugi Nyarangi using HTML, CSS and JavaScript.">
+  <title>Rhythm Studio | Interactive Drum Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Rhythm Studio home">
+        <span class="brand-icon">♫</span>
+        <span>RHYTHM<span class="brand-light">STUDIO</span></span>
+      </a>
+      <span class="live-indicator"><span></span> LIVE DRUM MACHINE</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL BEAT LAB</p>
+      <h1>Feel the <span>rhythm.</span></h1>
+      <p class="intro">
+        Tap the pads or use your keyboard to create your own beat.
+        Every key is a new sound.
+      </p>
+    </section>
+
+    <section class="studio-panel" aria-label="Drum machine">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">DRUM MACHINE / 01</p>
+          <h2>Performance Deck</h2>
+        </div>
+        <div class="status">
+          <span class="status-dot"></span>
+          <span id="statusText" aria-live="polite">READY TO PLAY</span>
+        </div>
+      </div>
+
+      <div class="control-strip">
+        <div class="control-info">
+          <span class="control-label">MASTER VOLUME</span>
+          <strong id="volumeValue">70%</strong>
+        </div>
+        <input
+          id="volume"
+          type="range"
+          min="0"
+          max="100"
+          value="70"
+          aria-label="Master volume"
+        >
+        <button class="mute-button" id="muteButton" type="button">MUTE</button>
+      </div>
+
+      <div class="pad-grid" id="padGrid">
+        <button class="drum-pad kick" data-sound="kick" data-key="a" type="button">
+          <span class="pad-category">LOW FREQUENCY</span>
+          <span class="pad-icon">◉</span>
+          <span class="pad-name">KICK</span>
+          <span class="pad-hint">Bass drum</span>
+          <kbd>A</kbd>
+        </button>
+
+        <button class="drum-pad snare" data-sound="snare" data-key="s" type="button">
+          <span class="pad-category">PERCUSSION</span>
+          <span class="pad-icon">▤</span>
+          <span class="pad-name">SNARE</span>
+          <span class="pad-hint">Snare drum</span>
+          <kbd>S</kbd>
+        </button>
+
+        <button class="drum-pad hihat" data-sound="hihat" data-key="d" type="button">
+          <span class="pad-category">HIGH FREQUENCY</span>
+          <span class="pad-icon">◌</span>
+          <span class="pad-name">HI-HAT</span>
+          <span class="pad-hint">Closed cymbal</span>
+          <kbd>D</kbd>
+        </button>
+
+        <button class="drum-pad tom" data-sound="tom" data-key="f" type="button">
+          <span class="pad-category">MID FREQUENCY</span>
+          <span class="pad-icon">◉</span>
+          <span class="pad-name">TOM</span>
+          <span class="pad-hint">Floor tom</span>
+          <kbd>F</kbd>
+        </button>
+
+        <button class="drum-pad cymbal" data-sound="cymbal" data-key="g" type="button">
+          <span class="pad-category">HIGH FREQUENCY</span>
+          <span class="pad-icon">✳</span>
+          <span class="pad-name">CYMBAL</span>
+          <span class="pad-hint">Crash cymbal</span>
+          <kbd>G</kbd>
+        </button>
+
+        <button class="drum-pad clap" data-sound="clap" data-key="h" type="button">
+          <span class="pad-category">PERCUSSION</span>
+          <span class="pad-icon">✋</span>
+          <span class="pad-name">CLAP</span>
+          <span class="pad-hint">Hand clap</span>
+          <kbd>H</kbd>
+        </button>
+
+        <button class="drum-pad rim" data-sound="rim" data-key="j" type="button">
+          <span class="pad-category">PERCUSSION</span>
+          <span class="pad-icon">◎</span>
+          <span class="pad-name">RIM</span>
+          <span class="pad-hint">Rim shot</span>
+          <kbd>J</kbd>
+        </button>
+
+        <button class="drum-pad openhat" data-sound="openhat" data-key="k" type="button">
+          <span class="pad-category">HIGH FREQUENCY</span>
+          <span class="pad-icon">◉</span>
+          <span class="pad-name">OPEN HAT</span>
+          <span class="pad-hint">Open cymbal</span>
+          <kbd>K</kbd>
+        </button>
+      </div>
+
+      <div class="bottom-bar">
+        <p><span class="keyboard-icon">⌨</span> KEYBOARD SHORTCUTS</p>
+        <p>Press <strong>A – K</strong> to play</p>
+      </div>
+    </section>
+
+    <section class="guide">
+      <div>
+        <span class="guide-number">01</span>
+        <h3>Choose a pad</h3>
+        <p>Click any drum pad to trigger its sound.</p>
+      </div>
+      <div>
+        <span class="guide-number">02</span>
+        <h3>Use your keyboard</h3>
+        <p>Press the displayed keys for faster playing.</p>
+      </div>
+      <div>
+        <span class="guide-number">03</span>
+        <h3>Control your sound</h3>
+        <p>Adjust the master volume or mute the audio.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Designed &amp; developed by <strong>Stephen Oyugi Nyarangi</strong></p>
+      <p>HTML5 · CSS3 · JavaScript</p>
+    </footer>
+  </main>
+</body>
+</html>
